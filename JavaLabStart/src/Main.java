@@ -41,6 +41,8 @@ public class Main {
         //System.out.println(studentsRepository.findById(2L));
         //studentsRepository.save(s);
         System.out.println(studentsRepository.findAll());
+        System.out.println(studentsRepository.findAllByAge(26));
+        System.out.println(studentsRepository.findById(2L));
         try {
             connection.close();
         } catch (SQLException e) {
