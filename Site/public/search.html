@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<!— Bootstrap CSS —>
@@ -16,18 +15,17 @@
 			$.getJSON( "/users", function(response) {
 				let html = "";
 				for (let i = 0; i < response.length; i++) {
-					html += "<p>" + response[i]["name"] + "</p>";
-					html += "<p>" + response[i]["age"] + "</p>";
-					html += "<p>" + response[i]["goal"] + "</p>";
-					html += "<p>" + response[i]["exp"] + "</p>";
-					html += "<p>" + response[i]["prog_langs"] + "</p>";
-					html += "<p>" + response[i]["email"] + "</p>";
+					html += "<p>" + "Имя: " + response[i]["name"] + "</p>";
+					html += "<p>" + "Возраст: " + response[i]["age"] + "</p>";
+					html += "<p>" + "Цель: " + response[i]["goal"] + "</p>";
+					html += "<p>" + "Опыт: " + response[i]["exp"] + "</p>";
+					html += "<p>" + "ЯП: " + response[i]["prog_langs"] + "</p>";
+					html += "<p>" + "Email: " + response[i]["email"] + "</p>";
 				}
 				$("#info").append(html);
 			});
 		}
 	</script>
-</div>
 </head>
 <body onload="getInfo()">
 
@@ -35,9 +33,7 @@
 		<h1>Резюме</h1>
 	</header>
 
-	<div id="info">
 
-	</div>
 
 	<div class="container-fluid h-100">
 		<div class="row align-items-center h-100">
@@ -53,13 +49,9 @@
 
 						<h5>
 							<ul class = "list-group">
-								<li class = "list-group-item">ФИО: Коробов Данил Андреевич</li>
-								<li class = "list-group-item">Возраст: 18</li>
-								<li class = "list-group-item">Цель: ворваться в айти-индустрию</li>
-								<li class = "list-group-item">Телефон: 89172999333</li>
-								<li class = "list-group-item">Опыт: нет</li>
-								<li class = "list-group-item">Языки программирования: Java</li>
-								<li class = "list-group-item">Почта: ecla111r@gmail.com</li>
+								<div id="info">
+
+								</div>
 							</ul> </h5>
 						</div>
 
