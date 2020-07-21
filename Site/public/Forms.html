@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+            integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+            crossorigin="anonymous"></script>
+    <title>Forms</title>
+</head>
+<script>
+    function getForms() {
+        $.getJSON("/forms", function (response) {
+            let html = "<table>";
+            html += "<tr>";
+            html += "<td>" + "Email" + "</td>";
+            html += "<td>" + "Name" + "</td>";
+            html += "<td>" + "Message" + "</td>";
+            html += "</tr>";
+            for (let i = 0; i < response.forms.length; i++) {
+                html += "<tr>";
+                html += "<td>" + response.forms[i].email + "</td>";
+                html += "<td>" + response.forms[i].name + "</td>";
+                html += "<td>" + response.forms[i].message + "</td>";
+                html += "</tr>";
+            }
+            html += "</table>";
+            $("#forms_table").append(html);
+        });
+    }
+</script>
+
+<body onload="getForms()">
+<div id="forms_table">
+
+</div>
+</body>
+</html>
