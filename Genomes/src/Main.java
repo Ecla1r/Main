@@ -3,6 +3,8 @@ import java.sql.*;
 
 public class Main {
 
+    static double x, y, z;
+
     // connecting to RDS with JDBC
     public static Connection connect() {
         Connection conn = null;
@@ -90,6 +92,12 @@ public class Main {
         System.out.println("Total Genomes: " + count);
         System.out.println("Intersected Genomes: " + intersect);
         System.out.println("Similarity: " + intersect / (count - intersect) + "\n");
+
+        switch (chainLength) {
+            case (3) : x = intersect / (count - intersect);
+            case (5) : y = intersect / (count - intersect);
+            case (9) : z = intersect / (count - intersect);
+        }
     }
 
     public static void main (String [] args) throws IOException {
@@ -107,6 +115,10 @@ public class Main {
         } catch (SQLException e) {
             throw new IllegalArgumentException(e);
         }
+
+        System.out.println("x = " + x + "\n" +
+                           "y = " + y + "\n" +
+                           "z = " + z);
 
     }
 }
